@@ -1,4 +1,4 @@
-# v0.1 wip 03
+# Update Loaders Disk - v0.1 wip 03
 
 import os
 
@@ -21,6 +21,8 @@ for tool in toollist:
         loaderPath = tool.GetAttrs("TOOLST_Clip_Name")
         loaderPathClean = loaderPath[1]
 
+        print loaderPathClean
+
         # split original loader path
         loaderPathSplit = loaderPathClean.split(os.sep)
 
@@ -30,11 +32,13 @@ for tool in toollist:
         # join new path
         path = os.path.join(*loaderPathSplit)
 
+        print path
+
         # replace loader path
         tool.Clip = path
 
-        # update loader times
+        """# update loader times
         tool.GlobalIn = globalIn
         tool.GlobalOut = globalOut
         tool.ClipTimeStart = trimIn
-        tool.ClipTimeEnd = trimOut
+        tool.ClipTimeEnd = trimOut"""
